@@ -5,10 +5,10 @@ phases:
       python: 3.9
   build:
     commands:
-      - aws cloudformation package --template-file Search Function/search-function.yaml --s3-bucket artifactbucket012425 --output-template-file Search Function/gateway.yaml
+      - aws cloudformation package --template-file search-function.yaml --s3-bucket artifactbucket012425 --output-template-file gateway.yaml
 
 artifacts:
   type: zip
   files:
-    - Search Function/search-function.yaml
-    - Search Function/gateway.yaml
+    - search-function.yaml
+    - gateway.yaml
