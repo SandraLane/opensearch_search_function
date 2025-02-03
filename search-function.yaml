@@ -4,11 +4,18 @@ Description: An AWS Serverless Specification template describing your function.
 Resources: https://artifactbucket012425.s3.us-east-1.amazonaws.com/opensearch_search_function/*
   searchgateway: https://c7u4ptxlec.execute-api.us-east-1.amazonaws.com/
     Type: 'AWS::Serverless::Function'
-    Properties:
+    Properties: arn:aws:lambda:us-east-1:977765183651:function:search_function_sm
+  PolicyDocument:
+    Statement:
+      - Effect: Allow
+        Action:
+          - 's3:PutObject'
+          - 's3:GetObject'
+          - 's3:DeleteObject'
       Handler: sample.lambda_handler
       Runtime: python3.9
       CodeUri: .
-      Description: ''
+      Description: 'Uses Auth credentials and sends query to OpenSearch'
       MemorySize: 128
       Timeout: 300
       Role: 'arn:aws:iam::977765183651:role/lambda_s3_cloudformation_service_role'
