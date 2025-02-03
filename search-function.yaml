@@ -7,8 +7,8 @@ Resources:
     Properties: 
       Handler: sample.lambda_handler
       Runtime: python3.9
-      CodeUri: 'https://feo4ax3fufde6q4lt2oumm3zwy0lvvze.lambda-url.us-east-1.on.aws/'
-      Description: 'Uses Auth credentials and sends query to OpenSearch'
+      CodeUri: . 
+      Description: ''
       MemorySize: 128
       Timeout: 300
       Role: 'arn:aws:iam::977765183651:role/lambda_s3_cloudformation_service_role'
