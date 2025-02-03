@@ -2,16 +2,9 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
 Resources: 
-  searchgateway: 'https://c7u4ptxlec.execute-api.us-east-1.amazonaws.com/'
+  searchgateway: 
     Type: 'AWS::Serverless::Function'
     Properties: 
-    PolicyDocument:
-    Statement:
-      - Effect: Allow
-        Action:
-          - 's3:PutObject'
-          - 's3:GetObject'
-          - 's3:DeleteObject'
       Handler: sample.lambda_handler
       Runtime: python3.9
       CodeUri: 'https://feo4ax3fufde6q4lt2oumm3zwy0lvvze.lambda-url.us-east-1.on.aws/'
